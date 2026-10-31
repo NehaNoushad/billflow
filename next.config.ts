@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Every page is user-specific and database-backed, so render on each request (no Cache Components).
+  serverExternalPackages: ["mongoose", "jspdf", "jspdf-autotable"],
   turbopack: {
     rules: {
       "*.css": {
